@@ -1,0 +1,82 @@
+{
+  "version": "2.0.0",
+  "description": "Speed-Boost Network Optimization Configuration",
+  "author": "ereezyy",
+  
+  "DNSServers": {
+    "Primary": ["1.1.1.1", "1.0.0.1"],
+    "Secondary": ["8.8.8.8", "8.8.4.4"],
+    "Backup": ["208.67.222.222", "208.67.220.220"],
+    "Custom": []
+  },
+  
+  "TCPSettings": {
+    "TcpWindowSize": 65536,
+    "TcpChimney": "enabled",
+    "TcpRSS": "enabled",
+    "TcpAutoTuning": "normal",
+    "TcpTimestamps": "disabled",
+    "InitialRTO": 2000,
+    "ECNCapability": "enabled"
+  },
+  
+  "NetworkOptimizations": {
+    "DisableNagle": true,
+    "EnableLargeSendOffload": true,
+    "EnableReceiveSideScaling": true,
+    "OptimizeForThroughput": true,
+    "InterruptModeration": true,
+    "ReceiveBuffers": 2048,
+    "TransmitBuffers": 2048
+  },
+  
+  "QoSSettings": {
+    "EnableQoS": true,
+    "ReservedBandwidth": 0,
+    "PriorityBoost": true,
+    "NonBestEffortLimit": 0
+  },
+  
+  "WindowsOptimizations": {
+    "DisableDeliveryOptimization": true,
+    "OptimizeNetworkThrottling": true,
+    "DisableNagleAlgorithm": true,
+    "OptimizeTCPAckFrequency": true
+  },
+  
+  "MonitoringSettings": {
+    "DefaultDuration": 60,
+    "SampleInterval": 5,
+    "PerformanceCounters": [
+      "\\Network Interface(*)\\Bytes Total/sec",
+      "\\Network Interface(*)\\Packets/sec",
+      "\\Network Interface(*)\\Current Bandwidth",
+      "\\TCPv4\\Connections Established",
+      "\\TCPv4\\Connection Failures"
+    ]
+  },
+  
+  "ReportingSettings": {
+    "GenerateHTMLReport": true,
+    "IncludeCharts": true,
+    "DetailedAnalysis": true,
+    "ReportTemplate": "professional",
+    "AutoOpenReport": true
+  },
+  
+  "SafetySettings": {
+    "CreateRestorePoint": true,
+    "BackupRegistry": true,
+    "VerifyChanges": true,
+    "RollbackOnError": true
+  },
+  
+  "LoggingSettings": {
+    "LogLevel": "INFO",
+    "LogToFile": true,
+    "LogToConsole": true,
+    "MaxLogSize": "10MB",
+    "LogRetention": 30
+  }
+}
+
